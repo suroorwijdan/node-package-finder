@@ -1,0 +1,85 @@
+<html data-ng-app="npmSearchApp" ng-csp="">
+<head>
+<meta charset="utf-8" />
+<title>NPM Search</title>
+<link rel="stylesheet" media="all" href="css/bootstrap.css">
+<link rel="stylesheet" media="all" href="css/main.css">
+<base target="_blank">
+</head>
+<body data-ng-controller="SearchController">
+
+<div id='background-image'>
+	<img src= 'img/1394900704_package-x-generic.png' height="170" />
+	<span class='text'> Find Packages! </span>
+</div>
+
+<section id="main" ng-hide='detailSection'>
+  <div class="header">
+  <span class='credits'>Extension Developed By: <a href='http://twitter.com/wotthetech'>Suroor Wijdan</a></span>
+  	<h3 style="margin-left: 15px; margin-top: 25px; margin-bottom: 30px;">{{title}}</h3>   
+  </div>
+       
+  <div class="col-sm-4">
+  	<input type="text" class="form-control" placeholder="Module name to search..." data-ng-model='searchTerm' style="width:340px; float:left" ng-enter='fetchResults()'>
+    <button class="btn" data-ng-click="fetchResults()" style="margin-left:18px">Search</button>
+  </div>
+
+<div class="results" style="margin-top:20px">
+	<div class='resultsLabel' ng-show='searched || resultsLength > 0'> 
+		{{resultsLength}} {{resultsLength > 1 && 'results' || 'result'}} returned! 
+	</div>
+	<div class="noResultsMessage" ng-show="searched && resultsLength == 0">			
+		No results found, Please try again with different keywords
+	</div>
+	<div>
+	  <ul class="list">  
+	  	<li class="listElement" ng-repeat='name in keys(modules)' data-ng-click='showDetails(name)'>{{$index+1}}. {{name}}<span class='author'>{{modules[name].version}} {{modules[name].author}}</span></li>
+	  </ul>    
+ 	 </div>
+</div>
+
+<div class="loader" ng-show='loader'>
+	<span class='loaderText'>Searching for your package..</span>
+	<img src='img/loader.gif'>
+</div>  
+</section>
+
+<section id='main' ng-show='detailSection'>
+	<div class="header">
+  		<h3 style="margin-left: 15px; margin-top: 25px; margin-bottom: 30px;">{{currentPackage.name}}</h3>   
+  		<button class='btn backButton' data-ng-click="goBack()">Back to results</button>
+ 	</div>
+ 	<div class='description'>
+ 		<label><strong>Description</strong></label><br/>
+ 		<span class='text'>{{currentPackage.description || 'Not Available' }}</span>
+ 	</div>
+ 	<div class="install">
+ 		<label><strong>Installation</strong></label><br/>
+ 		<code>npm install {{currentPackage.name}}</code>
+ 	</div>
+ 	<div class="install">
+ 		<label><strong>Author</strong></label><br/>
+ 		{{currentPackage.author.name}}
+ 	</div>
+
+ 	<div class="install">
+ 		<label><strong>License</strong></label><br/>
+ 		{{currentPackage.license || 'Not Available'}}
+ 	</div>
+
+ 	<div class="install">
+ 		<label><strong>Latest Version</strong></label><br/>
+ 		{{currentPackage['dist-tags'].latest || 'Not Available'}}
+ 	</div>
+
+ 	<div class="install">
+ 		<label><strong>Repo URL</strong></label><br/>
+ 		<pre class='length'>{{currentPackage.repository.url || 'Not Available'}}</pre>
+ 	</div> 	 	
+</section>
+
+<script src='js/jquery-1.9.1.min.js'></script>
+<script src="js/angular-1.1.0.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

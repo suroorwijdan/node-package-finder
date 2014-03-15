@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans'), local('DroidSans'), url(DroidSans.woff) format('woff');
+}
+
+html, body {
+  margin: 0;
+  height: 600px;
+  overflow: hidden;
+}
+
+body ::-webkit-scrollbar {
+  height: 16px;
+  overflow: visible;
+  width: 16px;
+}
+body ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .1);
+  background-clip: padding-box;
+  border: solid transparent;
+  min-height: 28px;
+  padding: 100px 0 0;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+  border-width: 1px 1px 1px 6px;
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body ::-webkit-scrollbar-button {
+  height: 0;
+  width: 0;
+}
+::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px;
+}
+body ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+body {
+  padding: 0 15px 15px 15px;
+  overflow: hidden;
+  background: url() no-repeat center center,
+              -webkit-linear-gradient(bottom, #eee, rgba(255,255,255,0));
+  background-size: 272px 120px, 100%;
+  font-family: 'Droid Sans', sans-serif;  
+}
+
+body.dropping > #main {
+  -webkit-filter: blur(2px);
+}
+
+ul {
+  margin: 0;
+  height: 525px;
+  overflow: auto;
+}
+
+li {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 3px;
+  background: -webkit-linear-gradient(right, #eee, rgba(255,255,255,0), #eee);
+  color: #666666;
+}
+
+#log {
+  display: block;
+}
+
+#main > nav {
+  padding-top: 15px;
+  margin-bottom: 10px;
+  -webkit-app-region: drag;
+}
+
+#main > nav button {
+  -webkit-app-region: no-drag;
+} 
+
+nav > h2 {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.uploading progress {
+  visibility: visible;
+}
+
+progress {
+  visibility: hidden;
+  width: 100%;
+}
+
+.date {
+  float: right;
+}
+
+
+.resultsLabel {
+  margin-right: 30px;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 11px;
+  float: right;
+}
+
+.loader {
+  position: absolute;
+  top: 390px;
+  left: 140px;
+}
+
+.loaderText {
+  font-size: 10;
+  font-weight: bold;
+  position: relative;
+  left: 40px;
+}
+
+.list {
+  list-style: none;
+  margin-left: -25px;
+}
+
+.author {
+  font-size: 10px;
+  font-style: italic;
+  font-weight: bold;
+  float: right;
+}
+
+#main {
+  width: 470px;  
+}
+
+.listElement {
+  cursor: pointer;
+  width: 430px;
+}
+
+.text {
+  font-size: 15px;
+}
+
+.description {
+  margin-left: 22px;
+}
+
+.install {
+  margin-top: 20px;
+  margin-left: 22px;
+}
+
+.backButton {
+  position: absolute;
+  right: 30px;
+  top: 22px;
+}
+
+
+.length {
+  width: 422px;
+}
+
+.noResultsMessage {
+  position: absolute;
+  left: 30px;
+  top: 166px;
+}
+
+.credits {
+  font-size: 9px;
+  float: right;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+#background-image {
+  position: absolute;
+  top: 220px;
+  left: 160px;
+  opacity: 0.2;
+}
+
+#background-image .text {
+  position: absolute;
+  left: 46px;
+  text-shadow: 2px 2px 3px;
+  bottom: 0;
+  font-size: 12px;
+}
