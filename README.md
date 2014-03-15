@@ -1,4 +1,4 @@
-npm-search-chrome
+node-package-finder
 =================
 
-A Chrome extension to search packages on NPM.
+A Chrome extension to search packages on Node. 
