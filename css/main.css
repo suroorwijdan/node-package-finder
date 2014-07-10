@@ -56,8 +56,8 @@ body.dropping > #main {
 
 ul {
   margin: 0;
-  height: 525px;
-  overflow: auto;
+  height: 420px;
+  overflow-y: scroll;
 }
 
 li {

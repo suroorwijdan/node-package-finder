@@ -15,13 +15,13 @@
 
 <section id="main" ng-hide='detailSection'>
   <div class="header">
-  <span class='credits'>Extension Developed By: <a href='http://twitter.com/wotthetech'>Suroor Wijdan</a></span>
+  <span class='credits'>Extension Developed By: <a href='http://twitter.com/wotthetech'>Suroor Wijdan</a> & <a href='http://twitter.com/TyagiSakshi13'>Sakshi Tyagi</a></span>
   	<h3 style="margin-left: 15px; margin-top: 25px; margin-bottom: 30px;">{{title}}</h3>   
   </div>
        
   <div class="col-sm-4">
   	<input type="text" class="form-control" placeholder="Module name to search..." data-ng-model='searchTerm' style="width:340px; float:left" ng-enter='fetchResults()'>
-    <button class="btn" data-ng-click="fetchResults()" style="margin-left:18px">Search</button>
+    <button class="btn btn-primary" data-ng-click="fetchResults()" style="margin-left:18px">Search</button>
   </div>
 
 <div class="results" style="margin-top:20px">
@@ -29,7 +29,7 @@
 		{{resultsLength}} {{resultsLength > 1 && 'results' || 'result'}} returned! 
 	</div>
 	<div class="noResultsMessage" ng-show="searched && resultsLength == 0">			
-		No results found, Please try again with different keywords
+		No results found. Please try again with different keywords!
 	</div>
 	<div>
 	  <ul class="list">  
@@ -59,7 +59,7 @@
  	</div>
  	<div class="install">
  		<label><strong>Author</strong></label><br/>
- 		{{currentPackage.author.name}}
+ 		{{currentPackage.author.name || 'Not Available'}}
  	</div>
 
  	<div class="install">
