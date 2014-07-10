@@ -46,7 +46,7 @@ var npmSearchApp = angular.module('npmSearchApp', []).filter('author', function(
 // Main Angular controller for app.
 function SearchController($scope, $http, $location) {  
   $scope.modules = {};
-  $scope.title = 'Node Package Finder';
+  $scope.title = 'Find your package';
   $scope.searchTerm = '';
   $scope.resultsLength = 0;
   $scope.loader = false;
