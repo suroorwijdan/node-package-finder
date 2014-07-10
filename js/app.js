@@ -62,14 +62,14 @@ function SearchController($scope, $http, $location) {
           $scope.loader = false;   
           $scope.searched = true;
           $scope.modules = {};
-          $(result).find('.search-result.package').each(function(idx ,el){
-            $scope.modules[$(el).find('h2').text()] = {};
-            $scope.modules[$(el).find('h2').text()].name = $(el).find('h2').text();
-            var info = $(el).find('p:first').text().trim().split('\n');
-            $scope.modules[$(el).find('h2').text()].version = info[0];
-            $scope.modules[$(el).find('h2').text()].author = info[1].trim();       
-            $scope.resultsLength ++;  
-          });        
+        $(result).find('.search-result.package').each(function(idx ,el){
+          $scope.modules[$(el).find('h2').text()] = {};
+          $scope.modules[$(el).find('h2').text()].name = $(el).find('h2').text();
+          var info = $(el).find('span:last').text().trim().split('\n');
+          $scope.modules[$(el).find('h2').text()].version = info[0];
+          $scope.modules[$(el).find('h2').text()].author = info[1].trim();
+          $scope.resultsLength ++;
+        });
       });
     }    
   };
