@@ -31,7 +31,7 @@
 	<div class="noResultsMessage" ng-show="searched && resultsLength == 0">			
 		No results found. Please try again with different keywords!
 	</div>
-	<div>
+	<div style="float:left">
 	  <ul class="list">  
 	  	<li class="listElement" ng-repeat='name in keys(modules)' data-ng-click='showDetails(name)'>{{$index+1}}. {{name}}<span class='author'>{{modules[name].version}} {{modules[name].author}}</span></li>
 	  </ul>    
